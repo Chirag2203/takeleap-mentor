@@ -107,10 +107,8 @@ const Personal = () => {
         { headers: { "Content-Type": "application/json" } }
       );
       console.log("Response:", response.data);
-      // Add success handling here
     } catch (error) {
       console.error("Error:", error);
-      // Add error handling here
     }
   };
 
@@ -119,7 +117,6 @@ const Personal = () => {
   };
 
   const handlePrev = () => {
-    // Add logic to navigate to the previous page
   };
 
   return (

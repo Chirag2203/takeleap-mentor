@@ -31,20 +31,16 @@ const Professional = () => {
     try {
       const response = await axios.post("YOUR_API_ENDPOINT", formData);
       console.log("Response:", response.data);
-      // Add success handling here
     } catch (error) {
       console.error("Error:", error);
-      // Add error handling here
     }
   };
 
   const handleNext = () => {
-    // Add logic to navigate to the next page
     navigate("/profile/mentorship");
   };
 
   const handlePrev = () => {
-    // Add logic to navigate to the previous page
     navigate("/profile/academic");
   };
 

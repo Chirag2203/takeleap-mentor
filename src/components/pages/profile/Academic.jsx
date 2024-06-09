@@ -62,20 +62,16 @@ const Academic = () => {
       console.log("FormData:", formData);
       const response = await axios.post("https://takeleap-backend-23blhztdv-srinivasjoshis-projects.vercel.app/takeleap/addMentorAcademicData", formData);
       console.log("Response:", response.data);
-      // Add success handling here
     } catch (error) {
       console.error("Error:", error);
-      // Add error handling here
     }
   };
 
   const handleNext = () => {
-    // move to /personal/professional
     navigate("/profile/professional");
   };
 
   const handlePrev = () => {
-    // Add logic to navigate to the previous page
     navigate("/profile/personal");
   };
 

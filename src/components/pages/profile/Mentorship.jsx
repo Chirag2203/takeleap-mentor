@@ -68,21 +68,17 @@ const Mentorship = () => {
       console.log("Form Data:", formData);
       const response = await axios.post("YOUR_API_ENDPOINT", formData);
       console.log("Response:", response.data);
-      // Add success handling here
     } catch (error) {
       console.error("Error:", error);
-      // Add error handling here
     }
   };
 
   const handleNext = () => {
-    // move to /personal/professional
     navigate("/profile/professional");
 
   };
 
   const handlePrev = () => {
-    // Add logic to navigate to the previous page
     navigate("/profile/professional");
   };
   return (
