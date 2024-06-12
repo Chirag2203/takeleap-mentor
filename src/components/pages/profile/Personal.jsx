@@ -28,12 +28,13 @@ const Personal = () => {
     id: "123",
     name: "",
     gender: "",
+    email:"",
     currentLocation: "",
     currentStatus: "",
     greScore: "",
     toeflScore: "",
     contactNumber: "",
-    avatar: null,
+    profileImg: null,
     admits: [{ programName: "", universityName: "", scholarshipAmount: "" }],
   });
 
@@ -52,7 +53,7 @@ const Personal = () => {
       const reader = new FileReader();
       reader.onloadend = () => {
         const base64String = reader.result.replace("data:", "").replace(/^.+,/, "");
-        setFormData({ ...formData, avatar: base64String });
+        setFormData({ ...formData, profileImg: base64String });
       };
       reader.readAsDataURL(file);
     }
@@ -92,11 +93,11 @@ const Personal = () => {
       admits: formData.admits,
     };
 
-    if (formData.avatar) {
-      payload.avatar = {
-        name: "avatar",
+    if (formData.profileImg) {
+      payload.profileImg = {
+        name: "profileImg",
         mediaType: "image/*",
-        base64Content: formData.avatar,
+        base64Content: formData.profileImg,
       };
     }
 
@@ -128,13 +129,13 @@ const Personal = () => {
             <label className="label-input">Profile Image</label>
             <div className="flex items-center space-x-6">
               <div className="shrink-0">
-                {formData.avatar ? (
+                {formData.profileImg ? (
                   <img
                   id="preview_img"
                   className="h-16 w-16 object-cover rounded-full"
                   src={
-                    formData.avatar
-                      ? `data:image/*;base64,${formData.avatar}`
+                    formData.profileImg
+                      ? `data:image/*;base64,${formData.profileImg}`
                       : ""
                   }
                   alt="Current profile photo"
@@ -241,6 +242,17 @@ const Personal = () => {
               required
             />
           </div>
+          <div className="w-1/3">
+              <label className="label-input">Email Id</label>
+              <Input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Email Id"
+                required
+              />
+            </div>
           <div className="w-full flex gap-4">
             <div className="w-1/3">
               <label className="label-input">GRE Score</label>

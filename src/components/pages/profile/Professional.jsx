@@ -29,7 +29,7 @@ const Professional = () => {
   const handleSave = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("YOUR_API_ENDPOINT", formData);
+      const response = await axios.post("", formData);
       console.log("Response:", response.data);
     } catch (error) {
       console.error("Error:", error);

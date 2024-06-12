@@ -134,13 +134,13 @@ module.exports = {
         "solid-13": "0px 2px 19px rgba(0, 0, 0, 0.05)",
       },
       keyframes: {
-        line: {
-          "0%, 100%": { transform: "translateY(100%)" },
-          "50%": { transform: "translateY(0)" },
+        "caret-blink": {
+          "0%,70%,100%": { opacity: "1" },
+          "20%,50%": { opacity: "0" },
         },
       },
       animation: {
-       
+        "caret-blink": "caret-blink 1.25s ease-out infinite",
       },
     },
   },
