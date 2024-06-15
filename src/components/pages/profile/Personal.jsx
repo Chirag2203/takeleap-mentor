@@ -41,6 +41,7 @@ const Personal = () => {
     toeflScore: "",
     contactNumber: "",
     profileImg: null,
+    linkedinUrl: "",
     communicationPreference: [],
     admits: [{ programName: "", universityName: "", scholarshipAmount: "" }],
   });
@@ -266,6 +267,26 @@ const Personal = () => {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="Email Id"
+                required
+              />
+            </div>
+          <div className="w-1/3">
+              <label className="label-input"><TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger className="bg-transparent border-none p-0">
+                    <BsInfoCircleFill />
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>This will be used to verify your profile and to build trust between the mentee and mentor.</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>LinkedIn Profile</label>
+              <Input
+                type="url"
+                name="linkedinUrl"
+                value={formData.linkedinUrl}
+                onChange={handleChange}
+                placeholder="LinkedIn profile url"
                 required
               />
             </div>

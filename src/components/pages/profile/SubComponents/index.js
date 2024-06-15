@@ -5,6 +5,7 @@ import MentorPreferences from "./MentorPreferences";
 import MentorPublication from "./MentorPublication";
 import MentorReviews from "./MentorReviews";
 import MentorWorkExperience from "./MentorWorkExperience";
+import ContactDetails from "./ContactDetails";
 
 export {
     MentorAdmitsRecieved,
@@ -13,4 +14,5 @@ export {
     MentorPreferences,
     MentorPublication,
     MentorReviews,
-    MentorWorkExperience}
+    MentorWorkExperience,
+    ContactDetails}

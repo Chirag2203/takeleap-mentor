@@ -2,6 +2,7 @@ import React from "react";
 import discover from "@/assets/images/discover.png";
 import { Button } from "@/components/ui/button";
 import {
+  ContactDetails,
   MentorAdmitsRecieved,
   MentorEducation,
   MentorOverview,
@@ -12,6 +13,7 @@ import {
 } from "./SubComponents";
 import MentorConsole from "@/components/MentorConsole";
 import { Link } from "react-router-dom";
+import { MdModeEdit } from "react-icons/md";
 
 const ProfileHome = () => {
   return (
@@ -30,15 +32,13 @@ const ProfileHome = () => {
             <MentorPublication />
             <MentorWorkExperience />
             <MentorAdmitsRecieved />
+            <ContactDetails/>
           </div>
           <div className="flex flex-col justify-start w-1/2">
             <div className="flex flex-col  gap-2">
-              <Button className="absolute top-4 right-4  bg-white dark:bg-gray-800 text-secondary dark:text-gray-300">
-                Contact
-              </Button>
                <Link to={"/profile/personal"}>
-              <Button className="absolute bg-secondary hover:bg-secondary/95 text-white top-24 right-4">
-               Edit Profile
+              <Button className="absolute bg-secondary hover:bg-secondary/95 text-white top-16 px-6 right-4">
+               Edit Profile <MdModeEdit className="ml-2"/>
               </Button>
               </Link>
             </div>
