@@ -19,7 +19,7 @@ const ContactDetails = () => {
   return (
     <div className='mt-6'>
         <p className='discover-title'> <RiContactsFill />Contact Details</p>
-        <div className='flex flex-wrap py-1 gap-8'>
+        <div className='flex flex-wrap py-1 gap-4'>
         {data.map((d,i)=>(
             d.title === "LinkedIn" ?
             (
