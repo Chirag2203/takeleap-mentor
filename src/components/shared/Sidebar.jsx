@@ -95,7 +95,7 @@ const Sidebar = ({ data }) => {
                             <div disabled={subItem.status}
                               className={`w-full flex gap-2 justify-start items-center p-2 ${
                                 location.pathname === subItem.link
-                                  ? "  border-purple-400 dark:text-white text-gray-900  bg-gradient-to-tr dark:border-purple-800 dark:from-purple-800 dark:to-violet-800  bg-white   rounded-md "
+                                  ? "  border-purple-400 dark:text-white text-purple-900  bg-gradient-to-tr dark:border-purple-800 dark:from-purple-800 dark:to-violet-800  bg-white   rounded-md "
                                   : " hover:bg-gradient-to-tr hover:to-purple-400 dark:hover:from-gray-800 dark:hover:to-gray-700 hover:from-purple-400 dark:hover:bg-gray-700 group rounded-lg text-white dark:text-gray-200 group-hover:text-white"
                               }`}
                             >
@@ -111,7 +111,7 @@ const Sidebar = ({ data }) => {
                     <div
                       className={` w-full flex gap-2 justify-start items-center p-2 ${
                         location.pathname === item.link
-                          ? "  border-purple-400 bg-gradient-to-tr dark:border-purple-800 dark:from-purple-800 dark:to-violet-800  bg-white  rounded-md dark:text-white text-gray-800 "
+                          ? "  border-purple-400 bg-gradient-to-tr dark:border-purple-800 dark:from-purple-800 dark:to-violet-800  bg-white  rounded-md dark:text-white text-purple-800 "
                           : " hover:bg-gradient-to-tr hover:to-purple-400   dark:hover:from-gray-800 dark:hover:to-gray-700 hover:from-purple-400 dark:hover:bg-gray-700 group rounded-lg dark:text-white text-white group-hover:text-white"
                       }`}
                     >
@@ -127,14 +127,14 @@ const Sidebar = ({ data }) => {
           <div className="mt-8 flex-col flex gap-2">
             <Button
               onClick={handleThemeChange}
-              className="flex gap-2 w-full cursor-pointer hover:text-gray-200 justify-start items-center p-2 rounded-lg  dark:bg-gray-900 hover:bg-gray-800"
+              className="flex gap-2 w-full cursor-pointer justify-start items-center p-2 rounded-lg  dark:bg-gray-900  bg-secondary hover:bg-white hover:text-gray-900 text-white "
             >
               <TbSettings2 className="w-5 h-5 transition-colors duration-75 " />
               <p className="text-lg font-medium">Switch theme </p>
             </Button>
             <Button
               onClick={signOut}
-              className="flex gap-2 w-full cursor-pointer text-red-500 justify-start items-center p-2 rounded-lg hover:border hover:border-red-600 border dark:bg-gray-900 hover:bg-gray-800"
+              className="flex gap-2 w-full cursor-pointer justify-start items-center p-2 rounded-lg  dark:bg-gray-900  bg-secondary hover:bg-white hover:text-red-600 text-red-500"
             >
               <TbLogout2 className="w-5 h-5 transition-colors duration-75 " />
               <p className="text-lg font-medium">Log out</p>

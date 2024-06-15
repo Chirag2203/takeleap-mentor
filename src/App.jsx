@@ -14,6 +14,9 @@ import {
   Professional,
   ProfileHome,
 } from "./components/pages/profile";
+import PlatformFeedback from "./components/pages/feedbacks/PlatformFeedback";
+import MenteeFeedback from "./components/pages/feedbacks/MenteeFeedback";
+import MenteeProfile from "./components/pages/discover/MenteeProfile";
 
 function App() {
   useEffect(() => {
@@ -37,6 +40,11 @@ function App() {
           <Route path="/profile/mentorship" element={<Mentorship />} />
           <Route path="/profile/professional" element={<Professional />} />
           <Route path="/profile/home" element={<ProfileHome />} />
+
+          <Route path="/discover/mentee" element={<MenteeProfile/>}/>
+
+          <Route path="/feedback/platform" element={<PlatformFeedback/>}/>
+          <Route path="/feedback/mentee" element={<MenteeFeedback/>}/>
 
           <Route path="*" element={<h1>Not Found</h1>} />
         </Routes>

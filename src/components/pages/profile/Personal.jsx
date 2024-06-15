@@ -21,7 +21,13 @@ import {
 } from "@/components/ui/tooltip";
 import { BsInfoCircleFill } from "react-icons/bs";
 import { IoIosRemoveCircle } from "react-icons/io";
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 
+const communicationPreferenceOptions = [
+  "Email",
+  "Phone",
+  "Text",
+];
 const Personal = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -35,6 +41,7 @@ const Personal = () => {
     toeflScore: "",
     contactNumber: "",
     profileImg: null,
+    communicationPreference: [],
     admits: [{ programName: "", universityName: "", scholarshipAmount: "" }],
   });
 
@@ -77,6 +84,15 @@ const Personal = () => {
     const newAdmits = [...formData.admits];
     newAdmits.splice(index, 1);
     setFormData({ ...formData, admits: newAdmits });
+  };
+
+  const handleToggle = (value) => {
+    setFormData((prevState) => {
+      const newPreferences = prevState.communicationPreference.includes(value)
+        ? prevState.communicationPreference.filter((item) => item !== value)
+        : [...prevState.communicationPreference, value];
+      return { ...prevState, communicationPreference: newPreferences };
+    });
   };
 
   const handleSave = async (e) => {
@@ -328,6 +344,47 @@ const Personal = () => {
               Add Admit
             </Button>
           </div>
+          <div className="mb-8 w-1/3">
+            <label className="label-title">
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger className="bg-transparent border-none p-0">
+                    <BsInfoCircleFill />
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>How would you like to communicate with your mentor</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+              Communication preference
+            </label>
+            <div className="mt-2 flex flex-wrap gap-2 ">
+              {formData.communicationPreference.map((pref, index) => (
+                <span key={index} className="toggle-display">
+                  {pref}
+                </span>
+              ))}
+            </div>
+            <ToggleGroup type="multiple" className="mentorship-toggle-group">
+              {communicationPreferenceOptions.map((pref, index) => (
+                <ToggleGroupItem
+                  key={index}
+                  value={pref}
+                  aria-label={pref}
+                  onClick={() => handleToggle(pref)}
+                  className={`${
+                    formData.communicationPreference.includes(pref)
+                      ? "bg-primary text-white"
+                      : "bg-gray-300 text-gray-800"
+                  }`}
+                >
+                  {pref}
+                </ToggleGroupItem>
+              ))}
+            </ToggleGroup>
+          </div>
+
+
           <ProfileFooter handleSave={handleSave} handleNext={handleNext} handlePrev={handlePrev} />
         </form>
       </div>
