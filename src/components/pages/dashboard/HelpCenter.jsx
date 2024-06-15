@@ -39,19 +39,20 @@ const helpData = [
     data : [
       {
         title: "Privacy Policy",
-        link: "",
+        link: "/policy/privacy",
       },
       {
         title: "Terms of Service",
-        link: "",
+        link: "/policy/terms",
+
       },
       {
         title: "Compensation Policy",
-        link: "",
+        link: "/policy/compensation",
       },
       {
-        title:"Refferal Policy",
-        link:"",
+        title:"Referral Policy",
+        link:"/policy/referral",
       }
     ]
   },

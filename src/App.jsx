@@ -17,6 +17,13 @@ import {
 import PlatformFeedback from "./components/pages/feedbacks/PlatformFeedback";
 import MenteeFeedback from "./components/pages/feedbacks/MenteeFeedback";
 import MenteeProfile from "./components/pages/discover/MenteeProfile";
+import ReferralHome from "./components/pages/Referral/ReferralHome";
+import {
+  Privacy,
+  Terms,
+  ReferralPolicy,
+  Compensation,
+} from "./components/pages/policies";
 
 function App() {
   useEffect(() => {
@@ -41,10 +48,17 @@ function App() {
           <Route path="/profile/professional" element={<Professional />} />
           <Route path="/profile/home" element={<ProfileHome />} />
 
-          <Route path="/discover/mentee" element={<MenteeProfile/>}/>
+          <Route path="/discover/mentee" element={<MenteeProfile />} />
 
-          <Route path="/feedback/platform" element={<PlatformFeedback/>}/>
-          <Route path="/feedback/mentee" element={<MenteeFeedback/>}/>
+          <Route path="/policy/privacy" element={<Privacy />} />
+          <Route path="/policy/terms" element={<Terms />} />
+          <Route path="/policy/compensation" element={<Compensation />} />
+          <Route path="/policy/referral" element={<ReferralPolicy />} />
+
+          <Route path="/referral" element={<ReferralHome />} />
+
+          <Route path="/feedback/platform" element={<PlatformFeedback />} />
+          <Route path="/feedback/mentee" element={<MenteeFeedback />} />
 
           <Route path="*" element={<h1>Not Found</h1>} />
         </Routes>

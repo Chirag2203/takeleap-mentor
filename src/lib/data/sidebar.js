@@ -7,21 +7,31 @@ import { FaFileCircleCheck } from "react-icons/fa6";
 
 export const SidebarData = [
   {
-    title: 'Dashboard',
-    link: '/dashboard',
+    title: "Dashboard",
+    link: "/dashboard",
     logo: MdSpaceDashboard,
-    status: 'deactive',
+    status: "deactive",
   },
   {
-    title: 'Profile',
-    link: '/profile/home',
+    title: "Profile",
+    link: "/profile/home",
     logo: MdManageAccounts,
-    status: 'active',
+    status: "active",
     subPages: [
-        { title: 'Personal', link: '/profile/personal', status: 'active'},
-      { title: 'Academic', link: '/profile/academic', status: 'active' },
-      { title: 'Professional', link: '/profile/professional' , status: 'active'},
-      { title: 'Mentorship', link: '/profile/mentorship', status: 'active' },
+      { title: "Personal", link: "/profile/personal", status: "active" },
+      { title: "Academic", link: "/profile/academic", status: "active" },
+      {
+        title: "Professional",
+        link: "/profile/professional",
+        status: "active",
+      },
+      { title: "Mentorship", link: "/profile/mentorship", status: "active" },
     ],
+  },
+  {
+    title: "Refer & Earn",
+    link: "/referral",
+    logo: FaUserPlus,
+    status: "active",
   },
 ];
